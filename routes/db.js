@@ -16,8 +16,8 @@ router.post('/add', function(req, res, next) {
     //return res.status(200).json(dbBody);
     var dbData = {};
     dbData.serie = dbBody.serie;
-    dbData.name  = serie.name;
-    dbData.type  = serie.type;
+    dbData.name  = dbBody.name;
+    dbData.type  = dbBody.type;
     ModelDb.addDb(dbData ,function(err,db){
         if(err){
           throw err;
