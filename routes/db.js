@@ -3,7 +3,7 @@ var router = express.Router();
 ModelDb = require('../models/db.js');
 let multer                  = require('multer');
 
-var upload = multer({ dest: 'public/images/' })
+var upload = multer({ dest: 'public/images/test' })
 
 
 
