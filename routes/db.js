@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 ModelDb = require('../models/db.js');
-
+var upload = multer({ dest: 'public/images/' })
 
 
 
@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
   });
 
 /* Post add DB. */
-router.post('/add', function(req, res, next) {
+router.post('/add', upload.single('image'), function(req, res, next) {
     var dbBody = req.body;
     //return res.status(200).json(dbBody);
     var dbData = {};
