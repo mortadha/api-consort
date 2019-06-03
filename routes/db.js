@@ -12,13 +12,11 @@ router.get('/', function(req, res, next) {
 
 /* Post add DB. */
 router.post('/add', function(req, res, next) {
-    var db = req.body;
-    console.log('db');
-    console.log(db);
+    var dbBody = req.body;
     var dbData = {};
-    dbData.serie = "serie";
-    dbData.name  = "name";
-    dbData.type  = "type";
+    dbData.serie = dbBody.serie;
+    dbData.name  = serie.name;
+    dbData.type  = serie.type;
     ModelDb.addDb(dbData ,function(err,db){
         if(err){
           throw err;
