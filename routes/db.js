@@ -23,11 +23,10 @@ router.post('/add', upload.single('image'), function(req, res, next) {
     var dbBody = req.body;
     //return res.status(200).json(dbBody);
     var dbData = {};
-    return res.status(200).json(req.file);
     dbData.serie = dbBody.serie;
     dbData.name  = dbBody.name;
     dbData.type  = dbBody.type;
-    let originalFileName = req.file.originalname;
+    let originalFileName = req.file.url;
     dbData.image         = originalFileName;
     ModelDb.addDb(dbData ,function(err,db){
         if(err){
