@@ -5,7 +5,7 @@ var multer = require('multer')
 var MulterAzureStorage = require('multer-azure-storage')
 var upload = multer({
   storage: new MulterAzureStorage({
-    azureStorageConnectionString: 'BM0fidUkpD7H0TQ/SjKaP00Of4v+2uX+XPkbGnDGfcIhBYuLeU//+S0IW7CjMyhpEWWm5Kgb2/FbiZItYcEa0A==',
+    azureStorageConnectionString: 'DefaultEndpointsProtocol=https;AccountName=consortstorage;AccountKey=BM0fidUkpD7H0TQ/SjKaP00Of4v+2uX+XPkbGnDGfcIhBYuLeU//+S0IW7CjMyhpEWWm5Kgb2/FbiZItYcEa0A==;EndpointSuffix=core.windows.net',
     containerName: 'image',
     containerSecurity: 'blob'
   })
