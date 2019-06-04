@@ -11,8 +11,9 @@ var DbTest = module.exports = mongoose.model('DbTest',dbSchema)
 
 //Add Db 
 module.exports.addDb = function(test,callback){
-    console.log('test db : ');
-    console.log(test);
     DbTest.create(test,callback);
 }
-
+//Get DB 
+module.exports.getDbs = function (callback, limit) {
+    addDb.find(callback).limit(limit);
+}

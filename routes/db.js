@@ -36,5 +36,15 @@ router.post('/add', upload.single('image'), function(req, res, next) {
       });
    
 });
+/* Post add DB. */
+router.get('/getDb', function(req, res, next) {
+  ModelDb.getDbs(function(err,db){
+      if(err){
+        throw err;
+      }
+      return res.status(200).json({resulat:db});
+    });
+ 
+});
 
 module.exports = router;
