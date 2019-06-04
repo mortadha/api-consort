@@ -15,5 +15,5 @@ module.exports.addDb = function(test,callback){
 }
 //Get DB 
 module.exports.getDbs = function (callback, limit) {
-    addDb.find(callback).limit(limit);
+    DbTest.find(callback).limit(limit);
 }
