@@ -1,9 +1,15 @@
 var express = require('express');
 var router = express.Router();
 ModelDb = require('../models/db.js');
-let multer                  = require('multer');
-
-var upload = multer({ dest: '../public' })
+var multer = require('multer')
+var MulterAzureStorage = require('multer-azure-storage')
+var upload = multer({
+  storage: new MulterAzureStorage({
+    azureStorageConnectionString: 'BM0fidUkpD7H0TQ/SjKaP00Of4v+2uX+XPkbGnDGfcIhBYuLeU//+S0IW7CjMyhpEWWm5Kgb2/FbiZItYcEa0A==',
+    containerName: 'image',
+    containerSecurity: 'blob'
+  })
+})
 
 
 
