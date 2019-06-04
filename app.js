@@ -50,6 +50,12 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/dbs', dbRouter);
 
+
+/* Send Message. */
+app.post('/sendMessage', function(req, res, next) {
+  io.sockets.emit('tchat','salut');
+  res.send('get DB');
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -65,5 +71,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
 server.listen(3000);
 module.exports = app;
