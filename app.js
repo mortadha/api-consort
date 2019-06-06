@@ -22,7 +22,8 @@ var dbRouter    = require('./routes/db');
 
 var app = express();
 var server = require('http').createServer(app)
-var io = require('socket.io')(server, { origins: '*:*'});
+var io = require('socket.io')( server, { origins: '*:*'} );
+io.origins('*:*');
 server.listen(3000);
 //var io = require('socket.io').listen(app.listen(3000),{path: '/api/socket.io'});
 io.sockets.on('connection', function (socket) {
