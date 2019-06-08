@@ -20,12 +20,21 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
-
+var io = require('socket.io')( server, { origins: '*:*',path: '/socket'} );
+io.origins('*:*');
+server.listen(3000);
+//var io = require('socket.io').listen(app.listen(3000),{path: '/api/socket.io'});
+io.sockets.on('connection', function (socket) {
+  console.log('client connect');
+  socket.on('echo', function (data) {
+    io.sockets.emit('message', data);
+  });
+});
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+//server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
