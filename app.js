@@ -57,7 +57,7 @@ app.use('/dbs', dbRouter);
 
 /* Send Message. */
 app.post('/sendMessage', function(req, res, next) {
-  io.sockets.emit('tchat','salut');
+  io.sockets.emit('tchat', { my: 'data' });
   res.send('get DB');
 });
 // catch 404 and forward to error handler
