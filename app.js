@@ -22,7 +22,7 @@ var dbRouter    = require('./routes/db');
 
 var app = express();
 var server = require('http').createServer(app)
-
+app.set('port', port);
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
