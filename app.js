@@ -24,7 +24,7 @@ var app = express();
 var server = require('http').createServer(app)
 var io = require('socket.io')( server, { origins: '*:*',path: '/socket'} );
 io.origins('*:*');
-
+server.listen(server);
 //var io = require('socket.io').listen(app.listen(3000),{path: '/api/socket.io'});
 io.sockets.on('connection', function (socket) {
   console.log('client connect');
