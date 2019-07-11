@@ -29,7 +29,7 @@ io.origins('*:*');
 //var io = require('socket.io').listen(app.listen(3000),{path: '/api/socket.io'});
 io.sockets.on('connection', function (socket) {
   console.log('client connect');
-  socket.on('echo', function (data) {
+  socket.on('echo', function (data ) {
     io.sockets.emit('message', data);
   });
 });
