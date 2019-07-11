@@ -52,7 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/dbs', dbRouter);
-
+console.log('test);
 
 
 /* Send Message. */
